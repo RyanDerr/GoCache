@@ -1,6 +1,6 @@
 module github.com/RyanDerr/EchoKV
 
-go 1.24.1
+go 1.27
 
 require (
 	github.com/go-ozzo/ozzo-validation v3.6.0+incompatible
