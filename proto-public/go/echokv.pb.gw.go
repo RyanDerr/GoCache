@@ -152,7 +152,7 @@ func RegisterKeyValueHandlerServer(ctx context.Context, mux *runtime.ServeMux, s
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/RyanDerr.EchoKV.KeyValue/Set", runtime.WithHTTPPathPattern("/v1/cache/set"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/RyanDerr.EchoKV.KeyValue/Set", runtime.WithHTTPPathPattern("/v1/cache"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -172,7 +172,7 @@ func RegisterKeyValueHandlerServer(ctx context.Context, mux *runtime.ServeMux, s
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/RyanDerr.EchoKV.KeyValue/Get", runtime.WithHTTPPathPattern("/v1/cache/get/{key}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/RyanDerr.EchoKV.KeyValue/Get", runtime.WithHTTPPathPattern("/v1/cache/{key}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -192,7 +192,7 @@ func RegisterKeyValueHandlerServer(ctx context.Context, mux *runtime.ServeMux, s
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/RyanDerr.EchoKV.KeyValue/Delete", runtime.WithHTTPPathPattern("/v1/cache/delete/{key}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/RyanDerr.EchoKV.KeyValue/Delete", runtime.WithHTTPPathPattern("/v1/cache/{key}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -250,7 +250,7 @@ func RegisterKeyValueHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/RyanDerr.EchoKV.KeyValue/Set", runtime.WithHTTPPathPattern("/v1/cache/set"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/RyanDerr.EchoKV.KeyValue/Set", runtime.WithHTTPPathPattern("/v1/cache"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -267,7 +267,7 @@ func RegisterKeyValueHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/RyanDerr.EchoKV.KeyValue/Get", runtime.WithHTTPPathPattern("/v1/cache/get/{key}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/RyanDerr.EchoKV.KeyValue/Get", runtime.WithHTTPPathPattern("/v1/cache/{key}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -284,7 +284,7 @@ func RegisterKeyValueHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/RyanDerr.EchoKV.KeyValue/Delete", runtime.WithHTTPPathPattern("/v1/cache/delete/{key}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/RyanDerr.EchoKV.KeyValue/Delete", runtime.WithHTTPPathPattern("/v1/cache/{key}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -301,9 +301,9 @@ func RegisterKeyValueHandlerClient(ctx context.Context, mux *runtime.ServeMux, c
 }
 
 var (
-	pattern_KeyValue_Set_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "cache", "set"}, ""))
-	pattern_KeyValue_Get_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"v1", "cache", "get", "key"}, ""))
-	pattern_KeyValue_Delete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"v1", "cache", "delete", "key"}, ""))
+	pattern_KeyValue_Set_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "cache"}, ""))
+	pattern_KeyValue_Get_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "cache", "key"}, ""))
+	pattern_KeyValue_Delete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "cache", "key"}, ""))
 )
 
 var (

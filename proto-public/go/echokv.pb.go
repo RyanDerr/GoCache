@@ -322,11 +322,11 @@ const file_proto_public_echokv_proto_rawDesc = "" +
 	"\x05value\x18\x02 \x01(\tR\x05value\"!\n" +
 	"\rDeleteRequest\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\"\x10\n" +
-	"\x0eDeleteResponse2\xb0\x02\n" +
-	"\bKeyValue\x12Z\n" +
-	"\x03Set\x12\x1b.RyanDerr.EchoKV.SetRequest\x1a\x1c.RyanDerr.EchoKV.SetResponse\"\x18\x82\xd3\xe4\x93\x02\x12:\x01*\"\r/v1/cache/set\x12]\n" +
-	"\x03Get\x12\x1b.RyanDerr.EchoKV.GetRequest\x1a\x1c.RyanDerr.EchoKV.GetResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/cache/get/{key}\x12i\n" +
-	"\x06Delete\x12\x1e.RyanDerr.EchoKV.DeleteRequest\x1a\x1f.RyanDerr.EchoKV.DeleteResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/cache/delete/{key}B\x1cZ\x1agithub.com/RyanDerr/EchoKVb\x06proto3"
+	"\x0eDeleteResponse2\xa1\x02\n" +
+	"\bKeyValue\x12V\n" +
+	"\x03Set\x12\x1b.RyanDerr.EchoKV.SetRequest\x1a\x1c.RyanDerr.EchoKV.SetResponse\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/v1/cache\x12Y\n" +
+	"\x03Get\x12\x1b.RyanDerr.EchoKV.GetRequest\x1a\x1c.RyanDerr.EchoKV.GetResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/cache/{key}\x12b\n" +
+	"\x06Delete\x12\x1e.RyanDerr.EchoKV.DeleteRequest\x1a\x1f.RyanDerr.EchoKV.DeleteResponse\"\x17\x82\xd3\xe4\x93\x02\x11*\x0f/v1/cache/{key}B\x1cZ\x1agithub.com/RyanDerr/EchoKVb\x06proto3"
 
 var (
 	file_proto_public_echokv_proto_rawDescOnce sync.Once
